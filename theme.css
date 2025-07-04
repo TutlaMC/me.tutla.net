@@ -24,6 +24,17 @@ body {
 }
 
 
+.follower {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #85FFBD, #FFFB7D);
+  box-shadow: 0 0 20px #85FFBD, 0 0 40px #FFFB7D;
+  pointer-events: none;
+  transition: transform 0.1s ease-out, opacity 0.2s ease;
+  opacity: 0.6;
+}
 
 
 

@@ -25,6 +25,7 @@
         <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 </head>
   <body data-bs-theme="dark">
+    <div class="follower"></div>
     <script src="https://kit.fontawesome.com/c66beb30a3.js" crossorigin="anonymous"></script>
     <!--<script src="common/page.js"></script>!--->
     <nav style="position:sticky;top:0;left:0; border:3px; border-radius: 30px;   margin-left:3vw;height:5%;padding:3vw; margin-top: 3vh; width:95%;opacity:0.8; 
@@ -873,6 +874,30 @@
 
     </div>
 
+    <script>
+    const follower = document.querySelector('.follower')
+    let mouseX = 0, mouseY = 0
+    let currentX = 0, currentY = 0
 
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX + 3
+      mouseY = e.clientY + 1
+    })
+
+    function animate() {
+      currentX += (mouseX - currentX) * 0.15
+      currentY += (mouseY - currentY) * 0.15
+      follower.style.transform = `translate(${currentX}px, ${currentY}px)`
+      requestAnimationFrame(animate)
+    }
+
+    animate()
+    document.addEventListener('mousedown', () => {
+      follower.style.opacity = '1'
+      setTimeout(() => {
+        follower.style.opacity = '0.6'
+      }, 300)
+    })
+  </script>
   </body>
 </html>
